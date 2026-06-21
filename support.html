@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOLOG — サポート / Support</title>
+<style>
+  :root{
+    --bg:#0B0B0C; --surface:#141416; --text:#F5F4F1;
+    --muted:#8A8A8F; --faint:#6B6B70; --border:rgba(255,255,255,0.10);
+    --accent:#C9B68F;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans",sans-serif;
+    line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:64px 24px 96px;}
+  .brand{font-size:13px; letter-spacing:4px; color:var(--accent); margin-bottom:8px;}
+  h1{font-size:28px; font-weight:500; letter-spacing:1px; margin:0 0 6px;}
+  .sub{color:var(--muted); font-size:14px; margin-bottom:48px;}
+  h2{font-size:18px; font-weight:500; margin:40px 0 12px; letter-spacing:0.5px;}
+  p{color:var(--text); font-size:15px; margin:0 0 14px;}
+  .muted{color:var(--muted); font-size:14px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .card{
+    background:var(--surface); border:0.5px solid var(--border);
+    border-radius:14px; padding:20px 22px; margin:16px 0;
+  }
+  .row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:0.5px solid var(--border); font-size:14px;}
+  .row:last-child{border-bottom:none;}
+  .row .k{color:var(--muted);}
+  .divider{height:0.5px; background:var(--border); margin:48px 0;}
+  .lang{color:var(--faint); font-size:12px; letter-spacing:2px; text-transform:uppercase; margin:64px 0 16px;}
+  footer{color:var(--faint); font-size:13px; margin-top:64px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">NOLOG</div>
+  <h1>サポート</h1>
+  <div class="sub">Leave No Trace.</div>
+
+  <p>NOLOG をご利用いただきありがとうございます。ご質問・不具合のご報告・その他お問い合わせは、以下のメールアドレスまでご連絡ください。通常2〜3営業日以内にご返信します。</p>
+
+  <div class="card">
+    <div class="row"><span class="k">お問い合わせ</span><span><a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a></span></div>
+    <div class="row"><span class="k">提供者</span><span>YMstudio</span></div>
+  </div>
+
+  <h2>よくある質問</h2>
+
+  <p><strong>メッセージが送信できません</strong><br>
+  <span class="muted">NOLOG は2台の端末で会話する設計です。片方の端末でルームを作成し、もう一方が招待コードで参加して、双方の暗号鍵の交換が完了すると送信できるようになります。1台のみでは送信欄は使用できません。また、初回接続時はサーバーの起動に少し時間がかかる場合があります。</span></p>
+
+  <p><strong>メッセージはどこに保存されますか</strong><br>
+  <span class="muted">NOLOG はメッセージをサーバーに保存しません。端末間で暗号化して受け渡すだけで、設定した有効期限（TTL）や既読などの条件で自動的に削除されます。</span></p>
+
+  <p><strong>NOLOG Pro とは</strong><br>
+  <span class="muted">基本の2端末暗号化チャットは無料で利用できます。NOLOG Pro（月額の自動更新サブスクリプション）にご加入いただくと、カスタムルール、ステルス破壊、スクリーンショット防止などの高度なプライバシー制御が利用可能になります。</span></p>
+
+  <div class="divider"></div>
+
+  <div class="lang">English</div>
+  <h1>Support</h1>
+  <p>Thank you for using NOLOG. For questions, bug reports, or any other inquiries, please contact us at the email below. We usually reply within 2–3 business days.</p>
+
+  <div class="card">
+    <div class="row"><span class="k">Contact</span><span><a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a></span></div>
+    <div class="row"><span class="k">Provider</span><span>YMstudio</span></div>
+  </div>
+
+  <p class="muted"><strong style="color:var(--text)">Can't send a message?</strong><br>
+  NOLOG is designed for two devices. One device creates a room, the other joins with the invite code, and messaging becomes available once the encryption key exchange completes. Sending is not available on a single device.</p>
+
+  <footer>© 2026 YMstudio · NOLOG</footer>
+
+</div>
+</body>
+</html>
