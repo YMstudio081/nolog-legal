@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>NOLOG — 招待</title>
+<!--
+  招待リンクの受け口。
+  - 招待コードは URL の「#」以降にあり、ブラウザはこの部分をサーバーへ送らない。
+    このページのホスト（GitHub Pages）のアクセスログにコードは残らない。
+  - 外部スクリプト・解析タグ・フォント読み込みは一切なし。コードはこのページの中だけで使い、どこにも送信しない。
+  - 「NOLOG で開く」で nolog://join/<code> を開く。アプリが無ければ App Store へ案内する。
+-->
+<style>
+  :root{--bg:#0B0B0C;--surface:#141416;--text:#F5F4F1;--muted:#8A8A8F;--faint:#6B6B70;--border:rgba(255,255,255,0.10);--accent:#C9B68F;--accent-deep:#9E885E;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans",sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+  .wrap{max-width:420px;width:100%;padding:48px 24px;text-align:center;}
+  .brand{font-family:"Hiragino Mincho ProN","Times New Roman",serif;font-size:44px;font-weight:400;letter-spacing:10px;padding-left:10px;margin-bottom:6px;}
+  .eyebrow{color:var(--accent-deep);font-size:10px;letter-spacing:5px;padding-left:5px;text-transform:uppercase;margin-bottom:36px;}
+  .rule{width:1px;height:40px;background:rgba(201,182,143,0.24);margin:0 auto 28px;}
+  .lead{font-family:"Hiragino Mincho ProN",serif;color:var(--muted);font-size:15px;line-height:2;margin:0 0 36px;}
+  .btn{display:block;width:100%;height:56px;line-height:56px;border-radius:999px;text-decoration:none;font-size:15px;letter-spacing:2px;margin:12px 0;border:0;cursor:pointer;}
+  .primary{background:var(--accent);color:var(--bg);}
+  .ghost{background:transparent;color:var(--text);border:0.5px solid var(--border);}
+  .code{margin-top:28px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.06);}
+  .code .label{color:var(--faint);font-size:11px;letter-spacing:2px;}
+  .code .value{font-family:Menlo,monospace;font-size:13px;letter-spacing:1.5px;color:var(--text);word-break:break-all;margin-top:6px;user-select:all;-webkit-user-select:all;}
+  .hint{color:var(--faint);font-size:11px;margin-top:8px;}
+  .err{color:var(--muted);font-size:14px;}
+  footer{color:var(--faint);font-size:11px;letter-spacing:0.5px;margin-top:40px;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="brand">NOLOG</div>
+  <div class="eyebrow">Leave no trace</div>
+  <div class="rule"></div>
+
+  <section id="ok" hidden>
+    <p class="lead" data-ja="招待が届いています。<br>読まれたら消える、二人だけの会話へ。" data-en="You've been invited.<br>A conversation for two, gone once read."></p>
+    <a id="open" class="btn primary" href="#" data-ja="NOLOG で開く" data-en="Open in NOLOG"></a>
+    <a id="store" class="btn ghost" href="https://apps.apple.com/app/id6759816705" rel="noopener" data-ja="App Store で入手" data-en="Get it on the App Store"></a>
+    <div class="code">
+      <div class="label" data-ja="開けない場合はアプリでこのコードを入力" data-en="If it won't open, enter this code in the app"></div>
+      <div id="code" class="value"></div>
+      <div class="hint" data-ja="このコードはこのページから外へ送信されません" data-en="This code is never sent anywhere from this page"></div>
+    </div>
+  </section>
+
+  <section id="bad" hidden>
+    <p class="err" data-ja="招待コードが見つかりません。<br>送られてきたリンクをもう一度確かめてください。" data-en="No invite code found.<br>Please check the link you received."></p>
+    <a class="btn ghost" href="https://apps.apple.com/app/id6759816705" rel="noopener" data-ja="App Store で入手" data-en="Get it on the App Store"></a>
+  </section>
+
+  <footer>© 2026 YMstudio · <a href="../privacy.html" style="color:inherit">Privacy</a></footer>
+</main>
+<script>
+(function () {
+  var lang = (navigator.language || "ja").toLowerCase().indexOf("ja") === 0 ? "ja" : "en";
+  document.documentElement.lang = lang;
+  var nodes = document.querySelectorAll("[data-ja]");
+  for (var i = 0; i < nodes.length; i++) nodes[i].innerHTML = nodes[i].getAttribute("data-" + lang);
+  if (lang === "en") document.title = "NOLOG — Invite";
+
+  // コードは # 以降のみから読む（クエリは見ない）。英数字とハイフン以外は受け付けない。
+  var raw = "";
+  try { raw = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { raw = ""; }
+  var valid = /^[A-Za-z0-9-]{8,64}$/.test(raw);
+
+  if (!valid) { document.getElementById("bad").hidden = false; return; }
+
+  var appUrl = "nolog://join/" + encodeURIComponent(raw);
+  document.getElementById("code").textContent = raw;
+  document.getElementById("open").setAttribute("href", appUrl);
+  document.getElementById("ok").hidden = false;
+
+  // 自動でアプリへ飛ばさない: 未インストールだと Safari が「アドレスが無効」と出すため。
+  // ボタンを押したときだけ開く（初めて招待された人は、まず App Store を選べる）。
+})();
+</script>
+</body>
+</html>
