@@ -54,7 +54,19 @@
   .foot{margin-top:auto;padding-top:36px;font-size:10px;letter-spacing:1px;color:var(--faint);text-align:center;line-height:2;}
   .foot a{color:inherit;}
   [hidden]{display:none !important;}
-  @media (prefers-reduced-motion: reduce){.spin{animation:none}.wax.pressing{transition:none}}
+  /* 開封: 封蝋が左右に割れて小さく残り、本文がわずかに浮かぶ（アプリと同じ 320ms / 260ms+140ms） */
+  .wax::before,.wax::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3834,#141412 70%);opacity:0;}
+  .wax::before{clip-path:inset(0 50% 0 0);} .wax::after{clip-path:inset(0 0 0 50%);}
+  .wax.broken{background:transparent;box-shadow:none;transform:scale(.62);opacity:.85;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .32s;}
+  .wax.broken::before,.wax.broken::after{opacity:1;}
+  .wax.broken::before{animation:splitL .32s cubic-bezier(.16,1,.3,1) both;}
+  .wax.broken::after{animation:splitR .32s cubic-bezier(.16,1,.3,1) both;}
+  .wax.broken span{opacity:0;}
+  @keyframes splitL{to{transform:translate(-9px,2px) rotate(-16deg)}}
+  @keyframes splitR{to{transform:translate(9px,2px) rotate(16deg)}}
+  .rise{animation:rise .26s .14s cubic-bezier(.16,1,.3,1) both;}
+  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.spin{animation:none}.wax.pressing{transition:none}.wax.broken,.wax.broken::before,.wax.broken::after{transition:none;animation:none}.wax.broken::before{transform:translate(-9px,2px) rotate(-16deg)}.wax.broken::after{transform:translate(9px,2px) rotate(16deg)}.rise{animation:fade .12s both}@keyframes fade{from{opacity:0}}}
 </style>
 </head>
 <body>

@@ -203,8 +203,9 @@
     rel.className = "note"; rel.style.color = "var(--gold-ink)"; rel.textContent = T.release;
     var hold = envEl.querySelector(".hold"), note = envEl.querySelector(".note");
     if (hold) hold.remove(); if (note) note.remove();
-    envEl.querySelector(".wax").style.width = "40px"; envEl.querySelector(".wax").style.height = "40px";
-    envEl.appendChild(Object.assign(document.createElement("div"), { className: "rule" }));
+    envEl.querySelector(".wax").classList.add("broken");
+    holder.className += " rise"; rel.className += " rise";
+    envEl.appendChild(Object.assign(document.createElement("div"), { className: "rule rise" }));
     envEl.appendChild(holder); envEl.appendChild(rel);
   }
 
