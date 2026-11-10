@@ -63,13 +63,14 @@
   <p>メッセージは送信前に端末で暗号化されます。当社の中継サーバーは、暗号化されたデータをルームごとに相手へ中継するだけで、メッセージを保存せず、内容を復号することもできません。</p>
   <p>中継のため、サーバーは接続している間だけ、ルームID、ルールと有効期限、公開鍵、暗号化されたメッセージ、既読・入力中・対応機能などの制御情報をメモリ上で扱います。これらをデータベースやファイルに保存することはありません。</p>
   <p>当社のサーバープログラムは、接続元のIPアドレスを記録しません。ただし、サーバーを稼働させている基盤（Render）は、通信を成立させる仕組み上、接続元のIPアドレス等を処理し、同社の方針に基づいて一時的に記録する場合があります。</p>
-  <h2>5. 招待リンクと案内ページ</h2>
+  <h2>5. 招待リンクと受け取りページ</h2>
   <p>招待リンクを開いたときに表示される案内ページは、GitHub Pages で配信しています。</p>
   <ul>
     <li>招待コードはリンクの「#」より後ろにあり、ブラウザの仕組み上、案内ページの配信サーバーには送られません。</li>
     <li>案内ページには、解析ツール、広告、外部からの読み込みはありません。</li>
     <li>ページを開いたときのアクセス情報（IPアドレス、ブラウザの種類など）は、GitHub が同社の方針に基づいて処理する場合があります。</li>
   </ul>
+  <p>「ブラウザで受け取る」を選んだ場合、鍵の作成・復号はそのページの中（お使いの端末上）で行い、鍵と本文はページのメモリにだけ置きます。読み終えるとページから消え、送った人にも知らせます。ブラウザではスクリーンショットを防げません。</p>
   <p>招待リンクは、ユーザーが選んだメッセージアプリなどで相手に送られます。その送信手段での扱いは、各サービスの方針によります。</p>
   <h2>6. 端末の機能の利用</h2>
   <ul>
@@ -144,6 +145,7 @@
     <li>The page has no analytics, no ads, and loads nothing from other sites.</li>
     <li>When the page is opened, GitHub may process access information (such as IP address and browser type) under its own policies.</li>
   </ul>
+  <p>If you choose &quot;Open in this browser&quot;, key generation and decryption happen inside that page on your device, and keys and content are kept only in the page&#x27;s memory. Once read, the content is removed from the page and the sender is notified. A browser cannot block screenshots.</p>
   <p>Invite links are sent through whatever messaging app you choose. How that app handles them is governed by its own policies.</p>
   <h2>6. Device features we use</h2>
   <ul>
