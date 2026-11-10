@@ -37,73 +37,153 @@
   <div class="brand">NOLOG</div>
   <h1>プライバシーポリシー</h1>
   <div class="sub">Leave No Trace.</div>
-  <div class="updated">最終更新日: 2026年6月21日</div>
+  <div class="updated">最終更新日：2026-11-10</div>
 
-  <p>YMstudio（以下「当方」）は、NOLOG（以下「本アプリ」）におけるユーザーのプライバシーを最優先に設計しています。本ポリシーは、本アプリが何を扱い、何を扱わないかを説明します。</p>
-
-  <h2>当方が収集しない情報</h2>
-  <p>本アプリは、アカウント登録を必要とせず、氏名・メールアドレス・電話番号などの個人を特定する情報を収集しません。以下の情報を当方は取得・保存しません。</p>
+  <h2>1. 基本理念</h2>
+  <p>NOLOGは、アカウント登録なしで使え、通信の痕跡を最小化するよう設計しています。YMstudio（以下「当社」）は、サービスの提供に必要な最小限の情報だけを扱います。</p>
+  <h2>2. 端末の中だけに保存する情報</h2>
+  <p>次の情報は、お使いの端末の中にだけ保存し、当社のサーバーには送りません。</p>
   <ul>
-    <li>氏名、メールアドレス、電話番号、その他の個人識別情報</li>
-    <li>連絡先、写真、位置情報</li>
-    <li>広告・追跡用の識別子</li>
+    <li>言語設定、利用規約への同意状況</li>
+    <li>Pro機能の利用状態</li>
+    <li>参加中のルームの一覧（ルームID、有効期限、ルール、ユーザーが付けた相手の表示名）</li>
+    <li>「画面を守る」のパスワード（端末の安全な保管領域に保存します）</li>
+    <li>Face ID 利用の有無、「振って全消去」の有無、初回案内を表示したかどうか</li>
   </ul>
-
-  <h2>メッセージの取り扱い</h2>
-  <p>本アプリのメッセージはエンドツーエンドで暗号化され、端末間でのみ復号されます。当方のサーバーはメッセージを保存せず、暗号化されたデータを送信者から受信者へ中継するのみです。中継後、メッセージはサーバー上に残りません。</p>
-  <p>メッセージは、ユーザーが設定した有効期限（TTL）、既読、返信、退出などの条件に従って自動的に削除されます。当方がメッセージ内容を閲覧・復号することはできません。</p>
-
-  <h2>サーバーログ</h2>
-  <p>サービスの稼働・接続維持のために、一時的な接続情報（接続の確立・切断などの技術的なログ）が処理される場合がありますが、これらにメッセージ内容は含まれず、個人を特定する目的では使用されません。</p>
-
-  <h2>サブスクリプションと購入</h2>
-  <p>NOLOG Pro の購入は Apple の App Store / StoreKit を通じて処理されます。決済情報は Apple が管理し、当方がクレジットカード番号等の決済情報を取得することはありません。購入状態の確認は端末上で行われます。</p>
-
-  <h2>第三者への提供</h2>
-  <p>当方は、ユーザーの情報を第三者に販売・貸与・提供しません。本アプリは広告ネットワークやアナリティクスSDKによる行動追跡を行いません。</p>
-
-  <h2>お子様のプライバシー</h2>
-  <p>本アプリは13歳未満の方を対象としていません。</p>
-
-  <h2>本ポリシーの変更</h2>
-  <p>本ポリシーは必要に応じて改定されることがあります。重要な変更がある場合は本ページ上で告知します。</p>
-
-  <h2>お問い合わせ</h2>
-  <p>本ポリシーに関するお問い合わせは <a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a> までご連絡ください。</p>
-
-  <div class="divider"></div>
+  <p>アプリを削除すると、これらは端末から消えます。「振って全消去」を使うと、ルームの一覧をその場で消去します。</p>
+  <h2>3. 端末のメモリ上だけで扱う情報</h2>
+  <p>次の情報はメモリ上だけで扱い、端末に保存しません。退出やアプリの終了で消えます。</p>
+  <ul>
+    <li>暗号鍵（秘密鍵・共有鍵）と相手の公開鍵</li>
+    <li>メッセージ本文（「秘密を渡す」で入力した内容を含みます）</li>
+    <li>照合番号と照合の結果</li>
+  </ul>
+  <h2>4. 当社のサーバーを通る情報</h2>
+  <p>メッセージは送信前に端末で暗号化されます。当社の中継サーバーは、暗号化されたデータをルームごとに相手へ中継するだけで、メッセージを保存せず、内容を復号することもできません。</p>
+  <p>中継のため、サーバーは接続している間だけ、ルームID、ルールと有効期限、公開鍵、暗号化されたメッセージ、既読・入力中・対応機能などの制御情報をメモリ上で扱います。これらをデータベースやファイルに保存することはありません。</p>
+  <p>当社のサーバープログラムは、接続元のIPアドレスを記録しません。ただし、サーバーを稼働させている基盤（Render）は、通信を成立させる仕組み上、接続元のIPアドレス等を処理し、同社の方針に基づいて一時的に記録する場合があります。</p>
+  <h2>5. 招待リンクと受け取りページ</h2>
+  <p>招待リンクを開いたときに表示される案内ページは、GitHub Pages で配信しています。</p>
+  <ul>
+    <li>招待コードはリンクの「#」より後ろにあり、ブラウザの仕組み上、案内ページの配信サーバーには送られません。</li>
+    <li>案内ページには、解析ツール、広告、外部からの読み込みはありません。</li>
+    <li>ページを開いたときのアクセス情報（IPアドレス、ブラウザの種類など）は、GitHub が同社の方針に基づいて処理する場合があります。</li>
+  </ul>
+  <p>「ブラウザで受け取る」を選んだ場合、鍵の作成・復号はそのページの中（お使いの端末上）で行い、鍵と本文はページのメモリにだけ置きます。読み終えるとページから消え、送った人にも知らせます。ブラウザではスクリーンショットを防げません。</p>
+  <p>招待リンクは、ユーザーが選んだメッセージアプリなどで相手に送られます。その送信手段での扱いは、各サービスの方針によります。</p>
+  <h2>6. 端末の機能の利用</h2>
+  <ul>
+    <li>加速度センサー：「振って全消去」をオンにしたときだけ、振る動作を検知するために端末の中で使います。値を保存・送信しません。</li>
+    <li>画面記録の抑止：秘密のメッセージを表示している間は、スクリーンショットと画面収録を抑止します（iOS 13 以降）。アプリ切替画面では、ルームの内容をぼかします。</li>
+    <li>画面消灯の抑止：「秘密を渡す」で相手を待っている間だけ、画面が消えないようにします。</li>
+    <li>Face ID：ロック解除のために端末が認証を行います。生体情報を当社が受け取ることはありません。</li>
+  </ul>
+  <h2>7. 決済</h2>
+  <p>Pro の購入は Apple の App Store（StoreKit）で処理されます。決済情報は Apple が管理し、当社はクレジットカード番号などを受け取りません。購入状態の確認は端末上で行います。</p>
+  <h2>8. 取得しない情報</h2>
+  <ul>
+    <li>氏名、メールアドレス、電話番号</li>
+    <li>連絡先、写真、位置情報</li>
+    <li>広告用ID、トラッキング、アナリティクス</li>
+    <li>外部サービスへのクラッシュログの送信</li>
+  </ul>
+  <h2>9. 暗号技術</h2>
+  <p>NaCl Box（Curve25519 + XSalsa20 + Poly1305）を使用し、秘密鍵は端末のメモリ上だけで保持します。「照合」は、双方の公開鍵から計算した番号を読み合わせ、通信の途中に第三者が入っていないかを確かめる仕組みです。</p>
+  <h2>10. 自動削除</h2>
+  <p>メッセージは、有効期限、既読、返信、退出、スクリーンショットの検知などのルールで自動的に削除されます。秘密のメッセージは、一度表示し終えた時点で双方の端末から削除されます。「秘密を渡す」のルームは、相手が読み終えると閉じられます。</p>
+  <h2>11. できないこと</h2>
+  <ul>
+    <li>別のカメラなどで画面を撮影することは防げません。</li>
+    <li>相手の端末が改造されている場合など、相手の端末での扱いまでは保証できません。</li>
+  </ul>
+  <h2>12. GDPR（EU/UK）</h2>
+  <p>EU/UK に居住する方は、アクセス、訂正、消去、処理の制限、データポータビリティの権利を有します。ただし、当社が保存していないデータは提供できません。</p>
+  <h2>13. CCPA/CPRA（カリフォルニア）</h2>
+  <p>当社は個人情報を販売・共有しません。トラッキングは行いません。</p>
+  <h2>14. 国際的なデータ移転</h2>
+  <p>通信は、国外のサーバーを経由する場合があります。</p>
+  <h2>15. 法的要請</h2>
+  <p>当社が保有する情報のみが開示の対象です。保存していない情報は提供できません。</p>
+  <h2>16. 改定</h2>
+  <p>本ポリシーは改定される場合があります。重要な変更は、アプリ内またはこのページでお知らせします。</p>
+  <h2>17. お問い合わせ</h2>
+  <p><a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a></p>
 
   <div class="lang">English</div>
   <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: June 21, 2026</div>
+  <div class="updated">Last updated: 2026-11-10</div>
 
-  <p>YMstudio ("we") designs NOLOG ("the app") with user privacy as the top priority. This policy explains what the app does and does not handle.</p>
-
-  <h2>Information we do not collect</h2>
-  <p>The app requires no account registration and does not collect personally identifying information such as your name, email, or phone number. We do not obtain or store:</p>
+  <h2>1. Our approach</h2>
+  <p>NOLOG works without an account and is designed to leave as little trace as possible. YMstudio (&quot;we&quot;) handles only the minimum information needed to provide the service.</p>
+  <h2>2. Stored only on your device</h2>
+  <p>The following is stored only on your device and is never sent to our servers.</p>
   <ul>
-    <li>Name, email, phone number, or other personal identifiers</li>
-    <li>Contacts, photos, or location data</li>
-    <li>Advertising or tracking identifiers</li>
+    <li>Language setting and whether you accepted the Terms</li>
+    <li>Pro status</li>
+    <li>Your list of active rooms (room ID, expiry, rules, and any display name you gave the other person)</li>
+    <li>Your &quot;Screen guard&quot; passcode (kept in the device&#x27;s secure storage)</li>
+    <li>Whether Face ID, &quot;Shake to erase&quot;, and the first-run guide are on or have been shown</li>
   </ul>
-
-  <h2>Messages</h2>
-  <p>Messages are end-to-end encrypted and decrypted only on the devices involved. Our server does not store messages; it relays encrypted data from sender to recipient and retains nothing afterward. Messages are automatically deleted according to user-defined rules (TTL, read, reply, leave). We cannot read or decrypt message content.</p>
-
-  <h2>Subscriptions</h2>
-  <p>NOLOG Pro purchases are processed through Apple's App Store / StoreKit. Payment information is handled by Apple; we never receive your card or payment details.</p>
-
-  <h2>Third parties</h2>
-  <p>We do not sell, rent, or share user information with third parties. The app contains no advertising networks or behavioral analytics SDKs.</p>
-
-  <h2>Children</h2>
-  <p>The app is not directed to children under 13.</p>
-
-  <h2>Contact</h2>
-  <p>For questions about this policy, contact <a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a>.</p>
+  <p>Deleting the app removes all of this. &quot;Shake to erase&quot; deletes the room list immediately.</p>
+  <h2>3. Kept only in memory</h2>
+  <p>The following is kept only in memory and never written to your device. It disappears when you leave the room or close the app.</p>
+  <ul>
+    <li>Encryption keys (private and shared) and the other person&#x27;s public key</li>
+    <li>Message content (including what you type into &quot;Hand over a secret&quot;)</li>
+    <li>Safety numbers and the result of verification</li>
+  </ul>
+  <h2>4. What passes through our server</h2>
+  <p>Messages are encrypted on your device before they are sent. Our relay server only forwards encrypted data to the other person in the same room. It does not store messages and cannot decrypt them.</p>
+  <p>To relay, the server handles the room ID, rules and expiry, public keys, encrypted messages, and control signals (read, typing, supported features) in memory while you are connected. None of this is written to a database or file.</p>
+  <p>Our server program does not record your IP address. However, the platform that runs the server (Render) processes connection information such as IP addresses as part of how networking works, and may log it temporarily under its own policies.</p>
+  <h2>5. Invite links and the invite page</h2>
+  <p>The page shown when someone opens an invite link is served by GitHub Pages.</p>
+  <ul>
+    <li>The invite code is placed after the &quot;#&quot; in the link. Browsers do not send that part to the server hosting the page.</li>
+    <li>The page has no analytics, no ads, and loads nothing from other sites.</li>
+    <li>When the page is opened, GitHub may process access information (such as IP address and browser type) under its own policies.</li>
+  </ul>
+  <p>If you choose &quot;Open in this browser&quot;, key generation and decryption happen inside that page on your device, and keys and content are kept only in the page&#x27;s memory. Once read, the content is removed from the page and the sender is notified. A browser cannot block screenshots.</p>
+  <p>Invite links are sent through whatever messaging app you choose. How that app handles them is governed by its own policies.</p>
+  <h2>6. Device features we use</h2>
+  <ul>
+    <li>Accelerometer: used on the device only when &quot;Shake to erase&quot; is turned on, to detect shaking. Values are never stored or sent.</li>
+    <li>Screen capture prevention: while a secret message is shown, screenshots and screen recording are blocked (iOS 13 and later). Room content is blurred in the app switcher.</li>
+    <li>Keep screen awake: only while you are waiting for someone to open a &quot;Hand over a secret&quot; link.</li>
+    <li>Face ID: your device performs authentication to unlock the app. We never receive biometric data.</li>
+  </ul>
+  <h2>7. Payments</h2>
+  <p>Pro purchases are processed by Apple&#x27;s App Store (StoreKit). Apple handles payment details; we never receive your card information. Purchase status is checked on your device.</p>
+  <h2>8. What we do not collect</h2>
+  <ul>
+    <li>Name, email address, phone number</li>
+    <li>Contacts, photos, location</li>
+    <li>Advertising identifiers, tracking, analytics</li>
+    <li>Crash logs sent to outside services</li>
+  </ul>
+  <h2>9. Encryption</h2>
+  <p>NOLOG uses NaCl Box (Curve25519 + XSalsa20 + Poly1305). Private keys are held only in device memory. &quot;Verify&quot; lets both people read out a number derived from both public keys to confirm that no third party is in the middle.</p>
+  <h2>10. Automatic deletion</h2>
+  <p>Messages are deleted automatically according to rules such as expiry, read, reply, leaving, and screenshot detection. A secret message is deleted from both devices once it has been viewed. A &quot;Hand over a secret&quot; room closes after the other person has read it.</p>
+  <h2>11. Limits</h2>
+  <ul>
+    <li>We cannot prevent someone from photographing the screen with another camera.</li>
+    <li>We cannot guarantee how the other person&#x27;s device handles messages, for example if it has been modified.</li>
+  </ul>
+  <h2>12. GDPR (EU/UK)</h2>
+  <p>If you live in the EU or UK, you have rights of access, rectification, erasure, restriction of processing, and data portability. We cannot provide data we do not store.</p>
+  <h2>13. CCPA/CPRA (California)</h2>
+  <p>We do not sell or share personal information, and we do not track you.</p>
+  <h2>14. International transfers</h2>
+  <p>Communications may pass through servers in other countries.</p>
+  <h2>15. Legal requests</h2>
+  <p>Only information we actually hold can be disclosed. We cannot provide information we do not store.</p>
+  <h2>16. Changes</h2>
+  <p>We may update this policy. We will announce significant changes in the app or on this page.</p>
+  <h2>17. Contact</h2>
+  <p><a href="mailto:yusuke58m42@gmail.com">yusuke58m42@gmail.com</a></p>
 
   <footer>© 2026 YMstudio · NOLOG</footer>
-
 </div>
 </body>
 </html>
